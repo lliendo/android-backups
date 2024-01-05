@@ -10,22 +10,19 @@ Installation
 From your phone launch Termux and run:
 
 ```bash
-curl -s -S -L https://raw.githubusercontent.com/lliendo/android-backups/master/scripts/termux-init.sh | bash
+cd && mkdir -p scripts && cd scripts
+curl -O -s -S -L https://raw.githubusercontent.com/lliendo/android-backups/master/scripts/termux-init.sh
+chmod u+x termux-init.sh && ./termux-init.sh
 ```
 
 After this you might want to also get the backup script:
 
 ```bash
-cd && mkdir -p scripts && curl -O -s -S -L https://raw.githubusercontent.com/lliendo/android-backups/master/scripts/termux-backup.sh
+curl -O -s -S -L https://raw.githubusercontent.com/lliendo/android-backups/master/scripts/termux-backup.sh
+chmod u+x termux-backup.sh
 ```
 
-
-Usage
------
-
-```bash
-./scripts/termux-backup SOURCE_PATH USERNAME@HOST:DESTINATION_PATH ID_RSA_PATH
-```
+Usage: `./scripts/termux-backup SOURCE_PATH USERNAME@HOST:DESTINATION_PATH ID_RSA_PATH`
 
 Example: `./scripts/termux-backup.sh $HOME/storage backup@redstar.local: id_rsa`
 
